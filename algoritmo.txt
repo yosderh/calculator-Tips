@@ -1,0 +1,44 @@
+algoritmo de como calcular propinas: 
+
+1-) obtener total de propinas.  DATOS INGRESADOS
+
+2-) ingresar horas de cada trabajador. DATOS INGRESADOS
+
+3-)convertir minutos restantes en decimales:
+	formula minutos a decimales: 1 --> 60min
+								   X --> cantidad de minutos   cantidad por 1 / 60 
+
+4-) sumarles los minutos en decimales a las horas de trabajador:
+	cantidad de horas + minutos en decimales.
+
+5-) convertir horas de trabajador a minutos:
+	formula horas a minutos: 1hr --> 60min
+		   cantidad de horas -->   X    cantidad por 60
+
+6-) sumar todos los minutos de todos los trabajadores:
+	minuto de trabajador1 + minuto de trabajador2 + ...
+
+7-) calcular valor de minutos segun las propinas:
+	total de propinas (entre) minutos totales
+	
+8-) multiplicar los minutos de cada trabajador por las propinas por minuto:
+	minutos trabajador1 x valor de minutos
+	
+	formula propinas por horas: total de horas --> total de propinas
+		horas de trabajo -->	X (PROPINAS POR HORAS: p/h)
+
+	
+	formula de propinas por minuto: minutos totales --> total de propinas
+			  cantidad de minutos --> X (PROPINAS POR MINUTOS: p/m)
+	
+
+	
+	
+	formula de propinas para cada uno:  minutos x P/M
+
+
+HORAS TOTALES: 779,01
+PROPINAS TOTALES: $502.275
+MINUTOS TOTALES: 46.740,6
+P/M: 10,746010
+5.780,4

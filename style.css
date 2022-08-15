@@ -1,0 +1,12 @@
+.tips-container form{
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 16px;
+    
+}
+ input{
+    width: 44px;
+ }
