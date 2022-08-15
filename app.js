@@ -1,9 +1,11 @@
+    // SELLECION DE ELEMENTOS HTML
 const inputTips = document.getElementById('totalTips');
 const inputHoras = document.querySelectorAll('.horas');
 const inputMin = document.querySelectorAll('.minutos');
 const allLabel = document.querySelectorAll('label .name-worker');
 const btnCalcular = document.getElementById('btn-calc');
 const body = document.querySelector('body');
+
 btnCalcular.addEventListener('click', ()=>{
         let totalTips = inputTips.value;
         const arrHours= arrValores(inputHoras);
@@ -11,16 +13,16 @@ btnCalcular.addEventListener('click', ()=>{
 
         const min = hoursToMinuts(arrHours);
         const totalMinutosworker = minutosTotales(min, arrMin);
-        const totalMinutos = sumaData(totalMinutosworker);
+        const totalMinuts = sumaData(totalMinutosworker);
         const allNames = nombres(allLabel);
 
-        const valorTipsMinuts = totalTips / totalMinutos;
-        const tipsworkerdefinitly= propinaWorker(totalMinutosworker, valorTipsMinuts);
+        const valorTipsToMinuts = totalTips / totalMinuts;
+        const tipsworkerdefinitly= propinaWorker(totalMinutosworker, valorTipsToMinuts);
 
-        console.log(valorTipsMinuts);
-        console.log(tipsworkerdefinitly);
-        console.log(sumaData(tipsworkerdefinitly));
-        console.log(allNames);
+        // console.log(valorTipsToMinuts);
+        // console.log(tipsworkerdefinitly);
+        // console.log(sumaData(tipsworkerdefinitly));
+        // console.log(allNames);
 
         showTipsWorker(allNames, tipsworkerdefinitly);
         
@@ -32,15 +34,15 @@ btnCalcular.addEventListener('click', ()=>{
         // CREA ARREGLOS DE VALORES HORAS Y MINUTOS
 
 const arrValores = (inputs)=>{
-    const data = [];
+    const array = [];
     for(let i=0; i<inputs.length; i++){
         let element = inputs[i].valueAsNumber;
         if(isNaN(element)){
             element=0;
         } 
-        data.push(element);
+        array.push(element);
     }
-    return data;
+    return array;
 }
 
         // SUMA DE LOS VALORES DE LOS INPUTS
