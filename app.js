@@ -5,7 +5,11 @@ const inputMin = document.querySelectorAll('.minutos');
 const allLabel = document.querySelectorAll('label .name-worker');
 const btnCalcular = document.getElementById('btn-calc');
 const body = document.querySelector('body');
+const div1 = document.querySelector('.tips-container');
+const main = document.querySelector('.main');
 
+
+//BOTON DE CALCULAR
 btnCalcular.addEventListener('click', ()=>{
         let totalTips = inputTips.value;
         const arrHours= arrValores(inputHoras);
@@ -18,13 +22,13 @@ btnCalcular.addEventListener('click', ()=>{
 
         const valorTipsToMinuts = totalTips / totalMinuts;
         const tipsworkerdefinitly= propinaWorker(totalMinutosworker, valorTipsToMinuts);
-
+        
+        showTipsWorker(allNames, tipsworkerdefinitly);
         // console.log(valorTipsToMinuts);
         // console.log(tipsworkerdefinitly);
         // console.log(sumaData(tipsworkerdefinitly));
         // console.log(allNames);
 
-        showTipsWorker(allNames, tipsworkerdefinitly);
         
 
         })
@@ -49,22 +53,19 @@ const arrValores = (inputs)=>{
 const sumaData = (data)=>{
 
     let suma = data.reduce((acumulador, horas) => acumulador + horas);
-
-    // console.log(data);
-    // console.log(suma);
     return suma;
 }
 
 //CONVIERTE MINUTOS A DECIMALES
-const minutosDecimales = (data)=>{ 
-    const minEnDecimales = [];
+// const minutosDecimales = (data)=>{ 
+//     const minEnDecimales = [];
 
-    for(let i=0; i<data.length; i++){
-       let decimal = (data[i] *1)/60;
-        minEnDecimales.push(decimal);
-    }
-    return minEnDecimales;
-}
+//     for(let i=0; i<data.length; i++){
+//        let decimal = (data[i] *1)/60;
+//         minEnDecimales.push(decimal);
+//     }
+//     return minEnDecimales;
+// }
 
 //CONVIERTE HORAS EN MINUTOS 
 const hoursToMinuts = (data)=>{
@@ -110,21 +111,24 @@ const nombres = (data)=>{
     // DOM
     function showTipsWorker(nombres, tips){
         let div = document.createElement('div');
+            div.classList.add('newDiv');
         const arrWorkers = [];
         for(let i=0; i<nombres.length; i++){
             let workers = new Object();
             workers.name= nombres[i];
-            workers.tip= tips[i];
+            workers.tip= parseInt(tips[i]);
             arrWorkers.push(workers);
         }
+        let ul = document.createElement('ul');
         for(let j=0; j<nombres.length; j++){
-            let span= document.createElement('span');
-                span.innerText= `${arrWorkers[j].name}: ${arrWorkers[j].tip} \n`
+            let li = document.createElement('li');
+                li.innerHTML= `${arrWorkers[j].name}: <span class="tips">${arrWorkers[j].tip}</span>`;
                 
-                div.appendChild(span);
+                ul.append(li);
         }
-
-        body.appendChild(div);
+        div.appendChild(ul);
+        main.appendChild(div);
+        div1.classList.add('inactive');
     }
 
        

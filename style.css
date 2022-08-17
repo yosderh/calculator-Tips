@@ -21,6 +21,9 @@ body{
     font-size: 1.4rem;
     font-family: var(--fuente1);
 }
+li{
+    list-style: none;
+}
 
 .main{
     display: flex;
@@ -72,6 +75,9 @@ body{
     padding: 0 0 0 24px;
 }
 
+.form1{
+    margin-top: 16px;
+}
 label {
     margin-bottom: 16px;
     display: flex;
@@ -80,4 +86,51 @@ label {
 
  input{
     width: 44px;
+    border-radius: 5px;
+    border: solid 2px gray;
+ }
+
+ .form2 label span{
+    color: var(--blueStrong);
+ }
+ .form2 label input{
+    width: 100%;
+    height: 26px;
+    border-radius: 10px;
+ }
+
+ #btn-calc{
+    width: 100%;
+    height: 32px;
+    border-radius: 12px;
+    background-color: var(--blueSoft);
+    border: none;
+ }
+
+ .inactive {
+    display: none;
+ }
+
+ .newDiv {
+    width: 330px;
+    padding: 24px;
+    background-color: var(--white);
+    color: var(--blueStrong);
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+ }
+
+ .newDiv ul {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 12px;
+ }
+
+ .newDiv ul li{
+    display: flex;
+    width: 60%;
+    justify-content: space-around; 
  }
