@@ -1,3 +1,39 @@
+const trabajadores = [
+    {
+        name: 'Adrian'
+    },
+    {
+        name: 'Alejandro'
+    },
+    {
+        name: 'Antonia'
+    },
+    {
+        name: 'Javiera'
+    },
+    {
+    name: 'Daniela'
+},
+{
+    name: 'Eduardo'
+},
+{
+    name: 'Fernanda'
+},
+{
+    name: 'kenny'
+},
+{
+    name: 'Paloma'
+},
+{
+    name: 'Sebastian'
+},
+{
+    name: 'nuevo'
+}
+];     
+     
      // SELLECION DE ELEMENTOS HTML
     const btnCalcular = document.getElementById('btn-calc');
     const body = document.querySelector('body');
