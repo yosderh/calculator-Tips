@@ -121,16 +121,18 @@ label {
     border-radius: 16px;
  }
 
- .newDiv ul {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 12px;
+ .newDiv tr {
+height: 5vh;
  }
 
- .newDiv ul li{
+ /* .newDiv {
     display: flex;
-    width: 60%;
-    justify-content: space-around; 
+    width: 100%;
+    justify-content: space-between; 
+ } */
+
+ .newDiv td:nth-child(3){
+    color: black;
+    font-family: var(--fuente2);
+    font-weight: bold;
  }

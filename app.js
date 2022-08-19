@@ -1,16 +1,41 @@
+     // SELLECION DE ELEMENTOS HTML
+    const btnCalcular = document.getElementById('btn-calc');
+    const body = document.querySelector('body');
+    const div1 = document.querySelector('.tips-container');
+    const main = document.querySelector('.main');
+    const form = document.querySelector('.form1');
+
+function divNames (object){
+    for(let i=0; i<object.length; i++){
+        let div = document.createElement('div');
+        let workername = object[i].name
+            div.innerHTML= ` <label class="label-tips" for="tips${workername}">
+            <span class="name-worker">${workername}</span>
+            <div class="time">
+                <input class="horas" id="hrs${workername}" type="number" name="horas" placeholder=" hrs">
+                <span>:</span>
+                <input class="minutos" id="min${workername}" type="number" name="minutos" placeholder=" min">
+            </div>
+        </label>`
+
+        form.append(div.firstElementChild);
+    }
+}
+divNames(trabajadores);
+
     // SELLECION DE ELEMENTOS HTML
-const inputTips = document.getElementById('totalTips');
-const inputHoras = document.querySelectorAll('.horas');
-const inputMin = document.querySelectorAll('.minutos');
-const allLabel = document.querySelectorAll('label .name-worker');
-const btnCalcular = document.getElementById('btn-calc');
-const body = document.querySelector('body');
-const div1 = document.querySelector('.tips-container');
-const main = document.querySelector('.main');
+    const inputTips = document.getElementById('totalTips');
+    const inputHoras = document.querySelectorAll('.horas');
+    const inputMin = document.querySelectorAll('.minutos');
+    const allLabel = document.querySelectorAll('label .name-worker');
+    
+    
+
 
 
 //BOTON DE CALCULAR
 btnCalcular.addEventListener('click', ()=>{
+    // console.log(inputTips);
         let totalTips = inputTips.value;
         const arrHours= arrValores(inputHoras);
         const arrMin= arrValores(inputMin);
@@ -23,7 +48,7 @@ btnCalcular.addEventListener('click', ()=>{
         const valorTipsToMinuts = totalTips / totalMinuts;
         const tipsworkerdefinitly= propinaWorker(totalMinutosworker, valorTipsToMinuts);
         
-        showTipsWorker(allNames, tipsworkerdefinitly);
+        showTipsWorker(allNames, tipsworkerdefinitly, arrHours, arrMin);
         // console.log(valorTipsToMinuts);
         // console.log(tipsworkerdefinitly);
         // console.log(sumaData(tipsworkerdefinitly));
@@ -46,6 +71,7 @@ const arrValores = (inputs)=>{
         } 
         array.push(element);
     }
+    console.log(array);
     return array;
 }
 
@@ -109,9 +135,9 @@ const nombres = (data)=>{
 }
 
     // DOM
-    function showTipsWorker(nombres, tips){
-        let div = document.createElement('div');
-            div.classList.add('newDiv');
+    function showTipsWorker(nombres, tips, horas, min){
+        let table = document.createElement('table');
+            table.classList.add('newDiv');
         const arrWorkers = [];
         for(let i=0; i<nombres.length; i++){
             let workers = new Object();
@@ -119,15 +145,20 @@ const nombres = (data)=>{
             workers.tip= parseInt(tips[i]);
             arrWorkers.push(workers);
         }
-        let ul = document.createElement('ul');
         for(let j=0; j<nombres.length; j++){
-            let li = document.createElement('li');
-                li.innerHTML= `${arrWorkers[j].name}: <span class="tips">${arrWorkers[j].tip}</span>`;
-                
-                ul.append(li);
+            let fila = document.createElement('tr');
+            let celdaName = document.createElement('td');
+            let celdaHours = document.createElement('td');
+            let celdaTips = document.createElement('td');
+                celdaName.innerText= `${arrWorkers[j].name}`;
+                celdaHours.innerText= `horas: ${horas[j]}:${min[j]}`;
+                celdaTips.innerText= `${arrWorkers[j].tip}`;
+                fila.append(celdaName);
+                fila.append(celdaHours);
+                fila.append(celdaTips);
+                table.appendChild(fila);
         }
-        div.appendChild(ul);
-        main.appendChild(div);
+        main.appendChild(table);
         div1.classList.add('inactive');
     }
 
