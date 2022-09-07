@@ -173,6 +173,7 @@ const nombres = (data)=>{
     // DOM
     function showTipsWorker(nombres, tips, horas, min){
         let table = document.createElement('table');
+        let totalTips = document.createElement('div');
             table.classList.add('newDiv');
         const arrWorkers = [];
         for(let i=0; i<nombres.length; i++){
@@ -194,7 +195,11 @@ const nombres = (data)=>{
                 fila.append(celdaTips);
                 table.appendChild(fila);
         }
+        totalTips.innerHTML = `<span>PROPINAS TOTALES: ${inputTips.value}</span>`;
+        totalTips.classList.add('totalTips');
+
         main.appendChild(table);
+        main.appendChild(totalTips);
         div1.classList.add('inactive');
     }
 

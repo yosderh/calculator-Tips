@@ -27,6 +27,7 @@ li{
 
 .main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -135,4 +136,17 @@ height: 5vh;
     color: black;
     font-family: var(--fuente2);
     font-weight: bold;
+ }
+
+ .totalTips{
+    width: 330px;
+    display: flex;
+    justify-content: end;
+ }
+ .totalTips span{
+    
+    background-color: var(--white);
+    border-radius: 5px ;
+    margin-top: 5px;
+    padding: 10px;
  }
