@@ -12,7 +12,7 @@ const trabajadores = [
         name: 'Javiera'
     },
     {
-    name: 'Daniela'
+    name: 'Scarlet'
 },
 {
     name: 'Eduardo'
@@ -28,6 +28,9 @@ const trabajadores = [
 },
 {
     name: 'Sebastian'
+},
+{
+    name: 'miguel'
 },
 {
     name: 'nuevo'
