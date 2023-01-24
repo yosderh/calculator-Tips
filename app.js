@@ -36,9 +36,15 @@ const trabajadores = [
     const form = document.querySelector('.form1');
 
 function divNames (object){
+    let arrayName= [];
+    for(let j=0; j<object.length; j++){
+        arrayName.push(object[j].name);
+    }
+    arrayName.sort();
+    console.log(arrayName)
     for(let i=0; i<object.length; i++){
         let div = document.createElement('div');
-        let workername = object[i].name
+        let workername = arrayName[i];
             div.innerHTML= ` <label class="label-tips" for="tips${workername}">
             <span class="name-worker">${workername}</span>
             <div class="time">
