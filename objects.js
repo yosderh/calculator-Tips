@@ -6,7 +6,7 @@ const trabajadores = [
         name: 'Alejandro'
     },
     {
-        name: 'Antonia'
+        name: 'Daniela'
     },
     {
         name: 'Javiera'
@@ -15,22 +15,13 @@ const trabajadores = [
     name: 'Scarlet'
 },
 {
-    name: 'Eduardo'
-},
-{
     name: 'Fernanda'
 },
 {
     name: 'kenny'
 },
 {
-    name: 'Paloma'
-},
-{
     name: 'Sebastian'
-},
-{
-    name: 'miguel'
 },
 {
     name: 'nuevo'
